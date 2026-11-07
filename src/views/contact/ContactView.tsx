@@ -1,21 +1,26 @@
+import { PROFILE } from '@/lib/data/profile'
+
 import { Badge } from '@/components/ui/Badge'
-import { Card } from '@/components/ui/Card'
+import { FindMeSection } from '@/views/contact/sections/FindMeSection'
+import { ReachSection } from '@/views/contact/sections/ReachSection'
+import { WorkSection } from '@/views/contact/sections/WorkSection'
 
 export const ContactView = () => {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-16 sm:px-6">
-      <div className="flex flex-col gap-3">
-        <Badge>Phase 1 placeholder</Badge>
+    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 sm:px-6">
+      <div className="flex flex-col gap-4">
+        <Badge className="w-fit">
+          {PROFILE.openTo} · {PROFILE.location}
+        </Badge>
         <h1 className="text-ink text-4xl font-bold tracking-tight">Let’s build something</h1>
-        <p className="text-ink-2 text-base">
-          Full contact page lands in Phase 5. Header, Footer and UI kit are live now.
+        <p className="text-ink-2 max-w-2xl text-base">
+          Have a project, a role or just a question? Pick whatever’s easiest and I’ll get back to
+          you.
         </p>
       </div>
-      <Card>
-        <p className="text-ink-2 text-sm">
-          Header and Footer render on this page — Phase 1 deliverable check.
-        </p>
-      </Card>
+      <WorkSection />
+      <ReachSection />
+      <FindMeSection />
     </div>
   )
 }
