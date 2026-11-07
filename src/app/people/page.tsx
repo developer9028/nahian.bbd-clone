@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: 'Builders, founders and teachers whose work keeps me sharp.',
 }
 
-const PeoplePage = () => <PeopleView />
+interface PeoplePageProps {
+  searchParams: Promise<{ platform?: string }>
+}
+
+const PeoplePage = async ({ searchParams }: PeoplePageProps) => {
+  const { platform } = await searchParams
+
+  return <PeopleView platform={platform} />
+}
 
 export default PeoplePage
