@@ -8,6 +8,15 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nahian.bd',
+        pathname: '/_astro/**',
+      },
+    ],
+  },
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }]
   },

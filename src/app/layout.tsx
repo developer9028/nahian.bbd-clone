@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
+import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
+
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -11,7 +14,13 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }
