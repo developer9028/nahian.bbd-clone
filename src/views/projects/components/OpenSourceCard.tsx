@@ -14,16 +14,16 @@ export const OpenSourceCard = ({ project }: OpenSourceCardProps) => {
         href={project.url}
         target="_blank"
         rel="noreferrer"
-        className="text-ink w-fit text-base font-semibold hover:text-emerald-700 hover:underline hover:underline-offset-4"
+        className="text-ink text-lead w-fit font-semibold hover:text-emerald-700 hover:underline hover:underline-offset-4"
       >
         {project.title} ↗
       </a>
-      <p className="text-ink-2 flex-1 text-sm leading-relaxed">{project.description}</p>
+      <p className="text-ink-2 text-body flex-1 leading-relaxed">{project.description}</p>
       <div className="flex items-center gap-2">
         <Tag label={project.language} />
-        <span className="text-ink-3 text-xs font-medium">★ {project.stars}</span>
+        <span className="text-ink-3 text-meta font-medium">★ {project.stars}</span>
         {project.forks !== undefined ? (
-          <span className="text-ink-3 text-xs">· {project.forks} forks</span>
+          <span className="text-ink-3 text-meta">· {project.forks} forks</span>
         ) : null}
       </div>
     </Card>

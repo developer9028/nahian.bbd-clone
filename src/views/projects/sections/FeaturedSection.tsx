@@ -20,11 +20,11 @@ export const FeaturedSection = () => {
               href={FEATURED_PROJECT.url}
               target="_blank"
               rel="noreferrer"
-              className="text-ink w-fit text-2xl font-bold tracking-tight hover:underline hover:underline-offset-4"
+              className="text-ink text-title w-fit font-bold tracking-tight hover:underline hover:underline-offset-4"
             >
               {FEATURED_PROJECT.title} ↗
             </a>
-            <p className="text-ink-2 max-w-xl text-sm leading-relaxed">
+            <p className="text-ink-2 text-body max-w-xl leading-relaxed">
               {FEATURED_PROJECT.description}
             </p>
           </div>
@@ -32,7 +32,7 @@ export const FeaturedSection = () => {
             {FEATURED_PROJECT.tags.map((tag) => (
               <span
                 key={tag}
-                className="border-line bg-surface-3 text-ink-2 inline-flex h-7 items-center rounded-full border px-2.5 text-xs font-medium"
+                className="border-line bg-surface-3 text-ink-2 text-meta inline-flex h-7 items-center rounded-full border px-2.5 font-medium"
               >
                 {tag}
               </span>

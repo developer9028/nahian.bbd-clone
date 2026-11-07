@@ -12,7 +12,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const renderStars = () => {
     if (project.stars === undefined) return null
 
-    return <span className="text-ink-3 text-xs font-medium">★ {project.stars} stars on GitHub</span>
+    return (
+      <span className="text-ink-3 text-meta font-medium">★ {project.stars} stars on GitHub</span>
+    )
   }
 
   return (
@@ -22,11 +24,11 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           href={project.url}
           target="_blank"
           rel="noreferrer"
-          className="text-ink w-fit text-lg font-semibold hover:text-emerald-700 hover:underline hover:underline-offset-4"
+          className="text-ink text-lead w-fit font-semibold hover:text-emerald-700 hover:underline hover:underline-offset-4"
         >
           {project.title} ↗
         </a>
-        <p className="text-ink-2 flex-1 text-sm leading-relaxed">{project.description}</p>
+        <p className="text-ink-2 text-body flex-1 leading-relaxed">{project.description}</p>
         <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
             <Tag key={tag} label={tag} />

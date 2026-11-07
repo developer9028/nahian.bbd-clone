@@ -37,11 +37,11 @@ export const Sidebar = () => {
   const renderLogo = () => (
     <div className="flex h-16 shrink-0 items-center xl:px-2">
       <Link href="/" aria-label="Al Nahian, home" className="group flex items-center gap-2.5">
-        <span className="btn-primary grid size-9 place-items-center rounded-[11px] transition-transform group-hover:-rotate-4 group-active:scale-95">
+        <span className="grid size-9 place-items-center rounded-[11px] bg-gradient-to-b from-[#22a86a] to-[#0f9459] text-white transition-transform group-hover:-rotate-4 group-active:scale-95">
           <span className="text-lg leading-none font-black tracking-tighter">N</span>
         </span>
         <span
-          className={cn('text-ink text-base font-bold tracking-tight', collapsed && 'xl:hidden')}
+          className={cn('text-title text-ink font-bold tracking-tight', collapsed && 'xl:hidden')}
         >
           nahian<span className="text-ink-3 group-hover:text-brand-500 transition-colors">.bd</span>
         </span>
@@ -105,7 +105,7 @@ export const Sidebar = () => {
             setIsDark((dark) => !dark)
             document.documentElement.classList.toggle('dark')
           }}
-          className="btn-secondary grid size-9 place-items-center rounded-full"
+          className="border-line grid size-9 place-items-center rounded-full border bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface-2)] shadow-[0_4px_12px_-4px_rgba(0,0,0,0.25)]"
         >
           {isDark ? (
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
@@ -134,7 +134,7 @@ export const Sidebar = () => {
         <button
           type="button"
           aria-label="Toggle sounds"
-          className="btn-secondary grid size-9 place-items-center rounded-full"
+          className="border-line grid size-9 place-items-center rounded-full border bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface-2)] shadow-[0_4px_12px_-4px_rgba(0,0,0,0.25)]"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -151,7 +151,7 @@ export const Sidebar = () => {
           type="button"
           aria-label="Toggle sidebar"
           onClick={() => setCollapsed((value) => !value)}
-          className="btn-secondary grid size-9 place-items-center rounded-full"
+          className="border-line grid size-9 place-items-center rounded-full border bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface-2)] shadow-[0_4px_12px_-4px_rgba(0,0,0,0.25)]"
         >
           {collapsed ? (
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">

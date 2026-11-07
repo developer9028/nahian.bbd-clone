@@ -6,7 +6,7 @@ import { Tag } from '@/components/ui/Tag'
 export const SkillsSection = () => {
   const renderTopSkills = () => (
     <div className="flex flex-col gap-3">
-      <h2 className="text-ink text-body font-semibold tracking-tight">Top skills</h2>
+      <h2 className="text-ink text-lg font-semibold tracking-tight">Top skills</h2>
       <div className="flex flex-wrap gap-2">
         {TOP_SKILLS.map((skill) => (
           <Tag key={skill} label={skill} className="text-meta h-8 px-3" />
@@ -17,7 +17,7 @@ export const SkillsSection = () => {
 
   const renderTools = () => (
     <div className="flex flex-col gap-3">
-      <h2 className="text-ink text-body font-semibold tracking-tight">Skills and tools</h2>
+      <h2 className="text-ink text-lg font-semibold tracking-tight">Skills and tools</h2>
       <div className="flex flex-wrap gap-2">
         {SKILLS_AND_TOOLS.map((tool) => (
           <Tag key={tool} label={tool} />

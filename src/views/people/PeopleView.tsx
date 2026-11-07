@@ -23,11 +23,11 @@ export const PeopleView = ({ platform }: PeopleViewProps) => {
   return (
     <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6">
       <div className="flex flex-col gap-3">
-        <p className="text-ink-3 text-xs font-semibold tracking-widest uppercase">
+        <p className="text-ink-3 text-meta font-semibold tracking-widest uppercase">
           {PEOPLE.length} people · {VALID_FILTERS.length + 1} platforms
         </p>
-        <h1 className="text-ink text-4xl font-bold tracking-tight">People</h1>
-        <p className="text-ink-2 max-w-2xl text-base">
+        <h1 className="text-ink text-title font-bold tracking-tight">People</h1>
+        <p className="text-ink-2 text-lead max-w-2xl">
           People I learn from — builders, founders and teachers whose work keeps me sharp. Filter by
           where I follow them, and follow them too.
         </p>
@@ -42,7 +42,7 @@ export const PeopleView = ({ platform }: PeopleViewProps) => {
       </div>
 
       {filtered.length === 0 ? (
-        <p className="border-line bg-surface-2 text-ink-3 rounded-2xl border p-6 text-center text-sm">
+        <p className="border-line bg-surface-2 text-ink-3 text-body rounded-2xl border p-6 text-center">
           No people found for this filter yet.
         </p>
       ) : null}

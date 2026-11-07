@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/Card'
 export const ReachSection = () => {
   return (
     <section aria-labelledby="reach-heading" className="flex flex-col gap-4">
-      <h2 id="reach-heading" className="text-ink text-2xl font-bold tracking-tight">
+      <h2 id="reach-heading" className="text-ink text-lg font-semibold tracking-tight">
         Reach me
       </h2>
       <Card>

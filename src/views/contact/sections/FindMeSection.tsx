@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/Card'
 export const FindMeSection = () => {
   return (
     <section aria-labelledby="findme-heading" className="flex flex-col gap-4">
-      <h2 id="findme-heading" className="text-ink text-2xl font-bold tracking-tight">
+      <h2 id="findme-heading" className="text-ink text-lg font-semibold tracking-tight">
         Find me on
       </h2>
       <Card>

@@ -17,15 +17,15 @@ export const PersonCard = ({ person }: PersonCardProps) => {
         <Avatar name={person.name} imageUrl={person.avatarUrl} size="md" />
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           <div className="flex items-center gap-2">
-            <h3 className="text-ink truncate text-base font-semibold">{person.name}</h3>
+            <h3 className="text-ink text-lead truncate font-semibold">{person.name}</h3>
             {person.isFavorite ? <Badge className="shrink-0">★ Favorite</Badge> : null}
           </div>
-          <p className="text-ink-2 text-sm">{person.role}</p>
+          <p className="text-ink-2 text-body">{person.role}</p>
         </div>
       </div>
 
       {person.whyFollow ? (
-        <p className="text-ink-2 border-l-2 border-emerald-500/40 pl-3 text-sm leading-relaxed">
+        <p className="text-ink-2 text-body border-l-2 border-emerald-500/40 pl-3 leading-relaxed">
           <span className="text-ink font-medium">Why I follow: </span>
           {person.whyFollow}
         </p>
@@ -40,7 +40,7 @@ export const PersonCard = ({ person }: PersonCardProps) => {
       <div className="border-line mt-auto flex flex-col gap-2 border-t pt-4">
         {person.links.map((link) => (
           <div key={link.platform} className="flex items-center justify-between gap-2">
-            <span className="text-ink-3 min-w-0 truncate text-xs">
+            <span className="text-ink-3 text-meta min-w-0 truncate">
               {link.platform} · {link.handle}
             </span>
             <Button href={link.url} variant="secondary" size="sm" className="shrink-0">

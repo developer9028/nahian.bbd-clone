@@ -42,7 +42,7 @@ export const FilterBar = ({ active }: FilterBarProps) => {
             role="tab"
             aria-selected={isActive}
             className={cn(
-              'inline-flex h-8 items-center gap-1.5 rounded-full border px-3 text-xs font-medium transition-colors',
+              'text-meta inline-flex h-8 items-center gap-1.5 rounded-full border px-3 font-medium transition-colors',
               isActive
                 ? 'border-emerald-500/40 bg-emerald-500/15 text-emerald-400'
                 : 'border-line bg-surface-2 text-ink-2 hover:bg-surface-3 hover:text-ink',

@@ -12,8 +12,8 @@ export const ContactView = () => {
         <Badge className="w-fit">
           {PROFILE.openTo} · {PROFILE.location}
         </Badge>
-        <h1 className="text-ink text-4xl font-bold tracking-tight">Let’s build something</h1>
-        <p className="text-ink-2 max-w-2xl text-base">
+        <h1 className="text-ink text-title font-bold tracking-tight">Let’s build something</h1>
+        <p className="text-ink-2 text-lead max-w-2xl">
           Have a project, a role or just a question? Pick whatever’s easiest and I’ll get back to
           you.
         </p>

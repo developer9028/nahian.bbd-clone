@@ -19,7 +19,7 @@ export const RightRail = () => {
       </div>
 
       <div className="flex flex-col gap-8 px-6 py-7">
-        <div className="glass relative rounded-3xl p-4">
+        <div className="border-line relative rounded-3xl border bg-[color-mix(in_srgb,var(--surface-2)_72%,transparent)] p-4">
           <p className="text-ink text-body flex items-center gap-2.5 font-semibold">
             <span className="relative flex size-2" aria-hidden="true">
               <span className="bg-brand-400 absolute size-full animate-ping rounded-full opacity-75" />

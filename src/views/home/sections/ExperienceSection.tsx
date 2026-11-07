@@ -41,7 +41,7 @@ export const ExperienceSection = () => {
 
   return (
     <section aria-labelledby="experience-heading" className="flex flex-col gap-4">
-      <h2 id="experience-heading" className="text-ink text-body font-semibold tracking-tight">
+      <h2 id="experience-heading" className="text-ink text-lg font-semibold tracking-tight">
         Experience
       </h2>
       <div className="flex flex-col gap-4">{EXPERIENCE.map((item) => renderItem(item))}</div>

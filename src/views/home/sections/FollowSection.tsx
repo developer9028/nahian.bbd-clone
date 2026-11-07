@@ -16,7 +16,7 @@ export const FollowSection = () => {
         <div className="flex items-start gap-3">
           <Avatar name={person.name} imageUrl={person.avatarUrl} size="md" />
           <div className="flex flex-1 flex-col gap-1">
-            <h3 className="text-ink text-body font-semibold">{person.name}</h3>
+            <h3 className="text-ink text-lg font-semibold">{person.name}</h3>
             <p className="text-ink-3 text-meta line-clamp-2 leading-relaxed">{person.role}</p>
           </div>
         </div>
@@ -38,7 +38,7 @@ export const FollowSection = () => {
     <section aria-labelledby="follow-heading" className="grid gap-6 lg:grid-cols-2">
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between gap-3">
-          <h2 id="follow-heading" className="text-ink text-body font-semibold tracking-tight">
+          <h2 id="follow-heading" className="text-ink text-lg font-semibold tracking-tight">
             Who to follow
           </h2>
           <Button href="/people" variant="ghost" size="sm">
@@ -52,7 +52,7 @@ export const FollowSection = () => {
 
       <Card className="h-fit">
         <div className="flex flex-col gap-4">
-          <h2 className="text-ink text-body font-semibold tracking-tight">Find me on</h2>
+          <h2 className="text-ink text-lg font-semibold tracking-tight">Find me on</h2>
           <ul className="divide-line flex flex-col divide-y">
             {SOCIAL_LINKS.map((social) => (
               <li key={social.platform}>
