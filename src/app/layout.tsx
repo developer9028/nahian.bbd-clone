@@ -47,12 +47,19 @@ export const viewport: Viewport = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${jetBrainsMono.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var s=localStorage.getItem('sidebar');if(s==='collapsed'){document.documentElement.dataset.sidebar='collapsed'}}catch(e){}`,
+          }}
+        />
+      </head>
       <body>
         <div className="flex min-h-dvh w-full">
           <Sidebar />
           <main className="border-line min-w-0 flex-1 pb-24 md:border-x md:pb-0">{children}</main>
-          <MobileBottomNav />
           <RightRail />
+          <MobileBottomNav />
         </div>
       </body>
     </html>

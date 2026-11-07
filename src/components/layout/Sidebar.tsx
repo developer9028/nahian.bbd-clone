@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 
 import { cn } from '@/lib/utils/cn'
 
@@ -31,19 +30,15 @@ const NAV = [
 
 export const Sidebar = () => {
   const pathname = usePathname()
-  const [collapsed, setCollapsed] = useState(false)
-  const [isDark, setIsDark] = useState(true)
 
   const renderLogo = () => (
-    <div className="flex h-16 shrink-0 items-center xl:px-2">
+    <div className="flex h-17.5 shrink-0 items-center xl:px-2">
       <Link href="/" aria-label="Al Nahian, home" className="group flex items-center gap-2.5">
         <span className="grid size-9 place-items-center rounded-[11px] bg-gradient-to-b from-[#22a86a] to-[#0f9459] text-white transition-transform group-hover:-rotate-4 group-active:scale-95">
           <span className="text-lg leading-none font-black tracking-tighter">N</span>
         </span>
-        <span
-          className={cn('text-title text-ink font-bold tracking-tight', collapsed && 'xl:hidden')}
-        >
-          nahian<span className="text-ink-3 group-hover:text-brand-500 transition-colors">.bd</span>
+        <span className="text-title text-ink sr-only font-bold tracking-tight xl:not-sr-only xl:data-[sidebar=collapsed]:sr-only">
+          nahian<span className="text-ink-3 group-hover:text-link transition-colors">.bd</span>
         </span>
       </Link>
     </div>
@@ -63,9 +58,9 @@ export const Sidebar = () => {
               href={item.href}
               title={item.label}
               className={cn(
-                'group text-ink hover:bg-surface-2 flex items-center gap-3.5 rounded-xl p-3 transition-colors xl:px-3 xl:py-2.5',
-                collapsed && 'xl:p-3',
-                isActive && 'bg-surface-2/70 font-semibold',
+                'group text-lead hover:bg-surface-2 flex items-center gap-3.5 rounded-xl p-3 transition-colors xl:px-3 xl:py-2.5 xl:data-[sidebar=collapsed]:p-3',
+                isActive && 'bg-surface-2/70 text-ink font-semibold',
+                !isActive && 'text-ink',
               )}
             >
               <svg
@@ -87,7 +82,9 @@ export const Sidebar = () => {
                   d={item.d}
                 />
               </svg>
-              <span className={cn('text-lead', collapsed && 'xl:hidden')}>{item.label}</span>
+              <span className="text-lead sr-only xl:not-sr-only xl:data-[sidebar=collapsed]:sr-only">
+                {item.label}
+              </span>
             </Link>
           )
         })}
@@ -96,40 +93,26 @@ export const Sidebar = () => {
   )
 
   const renderToggles = () => (
-    <div className="mt-4 flex shrink-0 flex-col items-center gap-3 xl:items-start xl:px-2">
-      <div className={cn('flex gap-2', collapsed && 'xl:flex-col')}>
+    <div className="mt-4 flex shrink-0 flex-col items-center gap-3 xl:items-start xl:px-2 xl:data-[sidebar=collapsed]:items-center xl:data-[sidebar=collapsed]:px-0">
+      <div className="flex flex-col gap-2 xl:flex-row xl:data-[sidebar=collapsed]:flex-col">
         <button
           type="button"
           aria-label="Toggle dark mode"
           onClick={() => {
-            setIsDark((dark) => !dark)
             document.documentElement.classList.toggle('dark')
           }}
           className="border-line grid size-9 place-items-center rounded-full border bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface-2)] shadow-[0_4px_12px_-4px_rgba(0,0,0,0.25)]"
         >
-          {isDark ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"
-              />
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"
-              />
-            </svg>
-          )}
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"
+            />
+          </svg>
         </button>
         <button
           type="button"
@@ -150,49 +133,62 @@ export const Sidebar = () => {
         <button
           type="button"
           aria-label="Toggle sidebar"
-          onClick={() => setCollapsed((value) => !value)}
+          onClick={() => {
+            const root = document.documentElement
+            if (root.dataset.sidebar === 'collapsed') {
+              delete root.dataset.sidebar
+              try {
+                localStorage.setItem('sidebar', 'expanded')
+              } catch {}
+            } else {
+              root.dataset.sidebar = 'collapsed'
+              try {
+                localStorage.setItem('sidebar', 'collapsed')
+              } catch {}
+            }
+          }}
           className="border-line grid size-9 place-items-center rounded-full border bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface-2)] shadow-[0_4px_12px_-4px_rgba(0,0,0,0.25)]"
         >
-          {collapsed ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <g
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              >
-                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
-                <path d="M9 4v16M14 10l2 2-2 2" />
-              </g>
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <g
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              >
-                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
-                <path d="M9 4v16M15 10l-2 2 2 2" />
-              </g>
-            </svg>
-          )}
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" className="xl:hidden">
+            <g
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            >
+              <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
+              <path d="M9 4v16M14 10l2 2-2 2" />
+            </g>
+          </svg>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="hidden xl:block"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            >
+              <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
+              <path d="M9 4v16M15 10l-2 2 2 2" />
+            </g>
+          </svg>
         </button>
       </div>
-      <p className={cn('text-ink-3 text-meta', collapsed && 'xl:hidden')}>© 2026 Al Nahian</p>
+      <p className="text-meta text-ink-3 sr-only xl:not-sr-only xl:data-[sidebar=collapsed]:sr-only">
+        © 2026 Al Nahian
+      </p>
     </div>
   )
 
   return (
-    <aside
-      className={cn(
-        'border-line sticky top-0 hidden h-dvh shrink-0 flex-col items-center px-3 pb-5 transition-[width] duration-200 md:flex',
-        collapsed ? 'w-19' : 'w-19 xl:w-65 xl:items-stretch xl:px-4',
-      )}
-    >
+    <aside className="border-line sticky top-0 hidden h-dvh w-19 shrink-0 flex-col items-center px-3 pb-5 transition-[width] duration-200 md:flex xl:w-65 xl:items-stretch xl:px-4 xl:data-[sidebar=collapsed]:w-19 xl:data-[sidebar=collapsed]:items-center xl:data-[sidebar=collapsed]:px-3">
       {renderLogo()}
       {renderNav()}
       {renderToggles()}
