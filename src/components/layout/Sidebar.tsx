@@ -10,24 +10,22 @@ const NAV = [
   {
     href: '/',
     label: 'Profile',
-    iconPath:
-      'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M9 10a3 3 0 1 0 6 0a3 3 0 1 0-6 0M6.168 14.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855',
+    d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0M9 10a3 3 0 1 0 6 0a3 3 0 1 0-6 0M6.168 14.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855',
   },
   {
     href: '/projects',
     label: 'Projects',
-    iconPath: 'm12 3 8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5',
+    d: 'm12 3 8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5',
   },
   {
     href: '/people',
     label: 'People',
-    iconPath:
-      'M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85',
+    d: 'M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85',
   },
   {
     href: '/contact',
     label: 'Contact',
-    iconPath: 'M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM3 7l9 6 9-6',
+    d: 'M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM3 7l9 6 9-6',
   },
 ] as const
 
@@ -39,7 +37,7 @@ export const Sidebar = () => {
   const renderLogo = () => (
     <div className="flex h-16 shrink-0 items-center xl:px-2">
       <Link href="/" aria-label="Al Nahian, home" className="group flex items-center gap-2.5">
-        <span className="btn-primary grid size-9 place-items-center rounded-[11px] transition-transform group-hover:-rotate-4">
+        <span className="btn-primary grid size-9 place-items-center rounded-[11px] transition-transform group-hover:-rotate-4 group-active:scale-95">
           <span className="text-lg leading-none font-black tracking-tighter">N</span>
         </span>
         <span
@@ -59,7 +57,6 @@ export const Sidebar = () => {
       <div className="flex flex-col gap-0.5">
         {NAV.map((item) => {
           const isActive = pathname === item.href
-
           return (
             <Link
               key={item.href}
@@ -87,7 +84,7 @@ export const Sidebar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d={item.iconPath}
+                  d={item.d}
                 />
               </svg>
               <span className={cn('text-sm', collapsed && 'xl:hidden')}>{item.label}</span>
@@ -100,7 +97,7 @@ export const Sidebar = () => {
 
   const renderToggles = () => (
     <div className="mt-4 flex shrink-0 flex-col items-center gap-3 xl:items-start xl:px-2">
-      <div className="flex gap-2">
+      <div className={cn('flex gap-2', collapsed && 'xl:flex-col')}>
         <button
           type="button"
           aria-label="Toggle dark mode"
@@ -110,14 +107,45 @@ export const Sidebar = () => {
           }}
           className="btn-secondary grid size-9 place-items-center rounded-full"
         >
-          <span className="text-base leading-none">{isDark ? '☾' : '☀'}</span>
+          {isDark ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"
+              />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"
+              />
+            </svg>
+          )}
         </button>
         <button
           type="button"
           aria-label="Toggle sounds"
           className="btn-secondary grid size-9 place-items-center rounded-full"
         >
-          <span className="text-base leading-none">♪</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 8a5 5 0 0 1 0 8m2.7-11a9 9 0 0 1 0 14M6 15H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2l3.5-4.5A.8.8 0 0 1 11 5v14a.8.8 0 0 1-1.5.5z"
+            />
+          </svg>
         </button>
         <button
           type="button"
@@ -125,7 +153,33 @@ export const Sidebar = () => {
           onClick={() => setCollapsed((value) => !value)}
           className="btn-secondary grid size-9 place-items-center rounded-full"
         >
-          <span className="text-base leading-none">⟨⟩</span>
+          {collapsed ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              >
+                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
+                <path d="M9 4v16M14 10l2 2-2 2" />
+              </g>
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              >
+                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
+                <path d="M9 4v16M15 10l-2 2 2 2" />
+              </g>
+            </svg>
+          )}
         </button>
       </div>
       <p className={cn('text-ink-3 text-xs', collapsed && 'xl:hidden')}>© 2026 Al Nahian</p>
