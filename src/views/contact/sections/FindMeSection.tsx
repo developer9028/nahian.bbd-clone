@@ -19,12 +19,12 @@ export const FindMeSection = () => {
                 className="group border-line bg-surface flex items-center justify-between gap-3 rounded-xl border px-4 py-3"
               >
                 <div className="flex min-w-0 flex-col">
-                  <span className="text-ink group-hover:text-brand-400 text-sm font-medium transition-colors">
+                  <span className="text-ink group-hover:text-brand-400 text-body font-medium transition-colors">
                     {social.platform}
                   </span>
-                  <span className="text-ink-3 truncate text-xs">{social.handle}</span>
+                  <span className="text-ink-3 text-meta truncate">{social.handle}</span>
                 </div>
-                <span className="text-ink-3 group-hover:text-ink shrink-0 text-sm transition-colors">
+                <span className="text-ink-3 group-hover:text-ink text-body shrink-0 transition-colors">
                   ↗
                 </span>
               </a>

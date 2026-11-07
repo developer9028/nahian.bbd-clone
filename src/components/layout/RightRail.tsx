@@ -4,7 +4,7 @@ import { SOCIAL_LINKS } from '@/lib/data/profile'
 import { Avatar } from '@/components/ui/Avatar'
 import { Button } from '@/components/ui/Button'
 
-const TOP_PEOPLE = PEOPLE.slice(0, 3)
+const TOP_PEOPLE = [PEOPLE[7], PEOPLE[8], PEOPLE[3]].filter((person) => person !== undefined)
 
 export const RightRail = () => {
   return (
