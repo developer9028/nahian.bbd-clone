@@ -8,6 +8,21 @@ import { Button } from '@/components/ui/Button'
 
 const STACK_PILLS = SKILLS_AND_TOOLS.slice(4, 12)
 
+const BRAND_DOT: Record<string, string> = {
+  Claude: 'bg-[#d97757]',
+  OpenAI: 'bg-[#10a37f]',
+  Antigravity: 'bg-[#3186ff]',
+  OpenCode: 'bg-[#9a9897]',
+  Laravel: 'bg-[#ff2d20]',
+  PHP: 'bg-[#777bb4]',
+  JavaScript: 'bg-[#f7df1e]',
+  Livewire: 'bg-[#fb70a9]',
+  'Alpine.js': 'bg-[#77c1d2]',
+  'Vue.js': 'bg-[#4fc08d]',
+  Inertia: 'bg-[#9553e9]',
+  'Tailwind CSS': 'bg-[#38bdf8]',
+}
+
 const BLOBS = [
   { v: 'var(--cover-1)', top: '-45%', left: '-12%', dur: '24s', delay: '0s', width: '70%' },
   { v: 'var(--cover-2)', top: '15%', left: '8%', dur: '27s', delay: '-4s', width: '70%' },
@@ -137,7 +152,10 @@ export const HeroSection = () => {
             {SKILLS_AND_TOOLS.slice(0, 4).map((tool) => (
               <li key={tool}>
                 <span className="text-meta text-ink inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface)] px-2.5 py-0.5 font-medium shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-                  <span className="size-3.5 shrink-0 rounded-full bg-current" aria-hidden="true" />
+                  <span
+                    className={`size-3.5 shrink-0 rounded-full ${BRAND_DOT[tool] ?? 'bg-current'}`}
+                    aria-hidden="true"
+                  />
                   {tool}
                 </span>
               </li>
@@ -147,7 +165,10 @@ export const HeroSection = () => {
             {STACK_PILLS.map((tool) => (
               <li key={tool}>
                 <span className="text-meta text-ink inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface)] px-2.5 py-0.5 font-medium shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-                  <span className="size-3.5 shrink-0 rounded-full bg-current" aria-hidden="true" />
+                  <span
+                    className={`size-3.5 shrink-0 rounded-full ${BRAND_DOT[tool] ?? 'bg-current'}`}
+                    aria-hidden="true"
+                  />
                   {tool}
                 </span>
               </li>

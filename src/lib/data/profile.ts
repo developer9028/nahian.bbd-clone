@@ -6,6 +6,7 @@ export interface ExperienceItem {
   period: string
   type: string
   description: string
+  logoUrl?: string
   highlights?: string[]
 }
 
@@ -61,6 +62,7 @@ export const WORK_OPTIONS = [
 export const EXPERIENCE: ExperienceItem[] = [
   {
     id: 'bidvers',
+    logoUrl: 'https://nahian.bd/_astro/bidvers.C2tonTRK_eIN7F.webp',
     role: 'Chief Technology Officer',
     company: 'Bidvers',
     companyUrl: 'https://bidvers.com',
@@ -72,6 +74,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
   {
     id: 'gymscanner',
+    logoUrl: 'https://nahian.bd/_astro/gymscanner.DxYHAPQV_1vPcnn.webp',
     role: 'Software Engineer',
     company: 'GymScanner',
     companyUrl: 'https://gymscanner.com',
@@ -81,6 +84,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
   {
     id: 'interactive-cares',
+    logoUrl: 'https://nahian.bd/_astro/interactive-cares.Dxy2JPeA_1hpXyj.webp',
     role: 'Education Mentor',
     company: 'Interactive Cares',
     period: 'Jun 2023 – Feb 2025',
@@ -90,6 +94,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
   {
     id: 'megaminds',
+    logoUrl: 'https://nahian.bd/_astro/megaminds.BKlHk01__V4dmS.webp',
     role: 'Education Mentor',
     company: 'Megaminds Technologies',
     period: '2023 – 2025',
@@ -98,6 +103,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
   {
     id: 'zovozip',
+    logoUrl: 'https://nahian.bd/_astro/zovozip.DtAI_D_n_R6qV.webp',
     role: 'Co-Founder',
     company: 'ZovoZip',
     period: 'Feb 2021 – Present',
@@ -106,6 +112,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
   {
     id: 'zovoteam',
+    logoUrl: 'https://nahian.bd/_astro/zovoteam.djNkmjfA_Z1Y9aq1.webp',
     role: 'Executive Web Developer',
     company: 'ZovoTeam',
     period: 'Jan 2021 – Present',
