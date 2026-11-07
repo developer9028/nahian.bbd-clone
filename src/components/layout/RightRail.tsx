@@ -20,14 +20,14 @@ export const RightRail = () => {
 
       <div className="flex flex-col gap-8 px-6 py-7">
         <div className="glass relative rounded-3xl p-4">
-          <p className="text-ink flex items-center gap-2.5 text-sm font-semibold">
+          <p className="text-ink text-body flex items-center gap-2.5 font-semibold">
             <span className="relative flex size-2" aria-hidden="true">
               <span className="bg-brand-400 absolute size-full animate-ping rounded-full opacity-75" />
               <span className="bg-brand-500 relative size-2 rounded-full" />
             </span>
             Open to new conversations
           </p>
-          <p className="text-ink-2 mt-1.5 text-xs">
+          <p className="text-ink-2 text-meta mt-1.5">
             Software engineer and agentic builder. Always happy to talk products, collaborations and
             consultations.
           </p>
@@ -39,7 +39,7 @@ export const RightRail = () => {
         <section aria-labelledby="rail-follow-heading">
           <h2
             id="rail-follow-heading"
-            className="text-ink mb-2 flex items-center gap-2 text-sm font-semibold"
+            className="text-ink text-body mb-2 flex items-center gap-2 font-semibold"
           >
             <span className="text-link">◎</span> Who to follow
           </h2>
@@ -56,10 +56,10 @@ export const RightRail = () => {
                 >
                   <Avatar name={person.name} imageUrl={person.avatarUrl} size="sm" />
                   <span className="min-w-0 flex-1">
-                    <span className="text-ink block truncate text-sm font-medium">
+                    <span className="text-ink text-body block truncate font-medium">
                       {person.name}
                     </span>
-                    <span className="text-ink-3 block truncate text-xs">{person.role}</span>
+                    <span className="text-ink-3 text-meta block truncate">{person.role}</span>
                   </span>
                 </a>
                 <Button href={person.links[0]?.url ?? '/people'} variant="secondary" size="sm">
@@ -92,7 +92,7 @@ export const RightRail = () => {
         <section aria-labelledby="rail-find-heading">
           <h2
             id="rail-find-heading"
-            className="text-ink mb-3 flex items-center gap-2.5 text-sm font-semibold"
+            className="text-ink text-body mb-3 flex items-center gap-2.5 font-semibold"
           >
             <span className="bg-brand-500 size-2 rounded-full" aria-hidden="true" />
             Find me on
@@ -107,11 +107,11 @@ export const RightRail = () => {
                   className="group hover:bg-surface-2 flex items-center gap-3 rounded-xl px-2 py-2 transition-colors"
                 >
                   <span className="btn-secondary grid size-9 place-items-center rounded-full">
-                    <span className="text-xs font-bold">{social.platform.slice(0, 1)}</span>
+                    <span className="text-meta font-bold">{social.platform.slice(0, 1)}</span>
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="text-ink block text-sm font-medium">{social.platform}</span>
-                    <span className="text-ink-3 block truncate text-xs">{social.handle}</span>
+                    <span className="text-ink text-body block font-medium">{social.platform}</span>
+                    <span className="text-ink-3 text-meta block truncate">{social.handle}</span>
                   </span>
                   <span className="text-ink-3 group-hover:text-ink transition-transform group-hover:translate-x-0.5">
                     ↗

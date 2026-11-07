@@ -13,10 +13,10 @@ export const HeroSection = () => {
         <div className="flex min-w-0 items-center gap-3">
           <Avatar name={PROFILE.name} imageUrl={PROFILE.avatarUrl} size="sm" />
           <div className="flex min-w-0 flex-col">
-            <span className="text-ink truncate text-sm font-semibold">
+            <span className="text-ink text-body truncate font-semibold">
               {PROFILE.name} <span className="text-brand-400">✓</span>
             </span>
-            <span className="text-ink-3 truncate text-xs">484 followers on GitHub</span>
+            <span className="text-ink-3 text-meta truncate">484 followers on GitHub</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -57,17 +57,17 @@ export const HeroSection = () => {
           />
         </div>
         <div className="flex flex-col items-center gap-2">
-          <h1 className="text-ink text-2xl font-bold tracking-tight">
+          <h1 className="text-ink text-title font-bold tracking-tight">
             {PROFILE.name} <span className="text-brand-400">✓</span>
           </h1>
-          <p className="text-ink-2 text-sm font-medium">{PROFILE.tagline}</p>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
+          <p className="text-ink-2 text-lead font-medium">{PROFILE.tagline}</p>
+          <span className="text-meta inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-400">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
             {PROFILE.openTo}
           </span>
         </div>
 
-        <div className="text-ink-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs">
+        <div className="text-ink-3 text-meta flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
           {CURRENT_ROLES.map((role) => (
             <a
               key={role.company}
@@ -86,7 +86,7 @@ export const HeroSection = () => {
           {SKILLS_AND_TOOLS.slice(0, 4).map((tool) => (
             <span
               key={tool}
-              className="border-line bg-surface-3 text-ink-2 inline-flex h-7 items-center rounded-full border px-2.5 text-xs font-medium"
+              className="border-line bg-surface-3 text-ink-2 text-meta inline-flex h-7 items-center rounded-full border px-2.5 font-medium"
             >
               {tool}
             </span>
@@ -96,7 +96,7 @@ export const HeroSection = () => {
           {STACK_PILLS.map((tool) => (
             <span
               key={tool}
-              className="border-line bg-surface-3 text-ink-2 inline-flex h-7 items-center rounded-full border px-2.5 text-xs font-medium"
+              className="border-line bg-surface-3 text-ink-2 text-meta inline-flex h-7 items-center rounded-full border px-2.5 font-medium"
             >
               {tool}
             </span>
@@ -108,10 +108,10 @@ export const HeroSection = () => {
             Get in touch
           </Button>
           <nav aria-label="Profile" className="mt-3 flex items-center justify-center gap-6 sm:mt-0">
-            <span className="border-brand-500 text-brand-400 border-b-2 pb-2 text-xs font-bold tracking-widest">
+            <span className="border-brand-500 text-brand-400 text-meta border-b-2 pb-2 font-bold tracking-widest">
               RESUME
             </span>
-            <span className="text-ink-3 pb-2 text-xs font-bold tracking-widest">WORK</span>
+            <span className="text-ink-3 text-meta pb-2 font-bold tracking-widest">WORK</span>
           </nav>
         </div>
       </div>

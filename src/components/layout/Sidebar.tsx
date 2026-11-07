@@ -87,7 +87,7 @@ export const Sidebar = () => {
                   d={item.d}
                 />
               </svg>
-              <span className={cn('text-sm', collapsed && 'xl:hidden')}>{item.label}</span>
+              <span className={cn('text-lead', collapsed && 'xl:hidden')}>{item.label}</span>
             </Link>
           )
         })}
@@ -182,7 +182,7 @@ export const Sidebar = () => {
           )}
         </button>
       </div>
-      <p className={cn('text-ink-3 text-xs', collapsed && 'xl:hidden')}>© 2026 Al Nahian</p>
+      <p className={cn('text-ink-3 text-meta', collapsed && 'xl:hidden')}>© 2026 Al Nahian</p>
     </div>
   )
 

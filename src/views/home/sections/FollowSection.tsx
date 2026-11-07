@@ -16,12 +16,12 @@ export const FollowSection = () => {
         <div className="flex items-start gap-3">
           <Avatar name={person.name} imageUrl={person.avatarUrl} size="md" />
           <div className="flex flex-1 flex-col gap-1">
-            <h3 className="text-ink text-sm font-semibold">{person.name}</h3>
-            <p className="text-ink-3 line-clamp-2 text-xs leading-relaxed">{person.role}</p>
+            <h3 className="text-ink text-body font-semibold">{person.name}</h3>
+            <p className="text-ink-3 text-meta line-clamp-2 leading-relaxed">{person.role}</p>
           </div>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="text-ink-3 text-xs">
+          <span className="text-ink-3 text-meta">
             {primaryLink ? `${primaryLink.platform} · ${primaryLink.handle}` : 'Follow'}
           </span>
           {primaryLink ? (
@@ -38,7 +38,7 @@ export const FollowSection = () => {
     <section aria-labelledby="follow-heading" className="grid gap-6 lg:grid-cols-2">
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between gap-3">
-          <h2 id="follow-heading" className="text-ink text-xl font-bold tracking-tight">
+          <h2 id="follow-heading" className="text-ink text-body font-semibold tracking-tight">
             Who to follow
           </h2>
           <Button href="/people" variant="ghost" size="sm">
@@ -52,7 +52,7 @@ export const FollowSection = () => {
 
       <Card className="h-fit">
         <div className="flex flex-col gap-4">
-          <h2 className="text-ink text-xl font-bold tracking-tight">Find me on</h2>
+          <h2 className="text-ink text-body font-semibold tracking-tight">Find me on</h2>
           <ul className="divide-line flex flex-col divide-y">
             {SOCIAL_LINKS.map((social) => (
               <li key={social.platform}>
@@ -60,16 +60,16 @@ export const FollowSection = () => {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between gap-3 py-3 text-sm transition-colors hover:text-emerald-700"
+                  className="text-body flex items-center justify-between gap-3 py-3 transition-colors hover:text-emerald-700"
                 >
                   <span className="text-ink font-medium">{social.platform}</span>
-                  <span className="text-ink-3 text-xs">{social.handle} ↗</span>
+                  <span className="text-ink-3 text-meta">{social.handle} ↗</span>
                 </a>
               </li>
             ))}
           </ul>
           <div className="border-line flex items-center justify-between gap-3 border-t pt-4">
-            <p className="text-ink-3 text-xs">Open to new conversations</p>
+            <p className="text-ink-3 text-meta">Open to new conversations</p>
             <Button href="/contact" size="sm">
               Let’s talk
             </Button>

@@ -9,7 +9,7 @@ export const Tag = ({ label, className }: TagProps) => {
   return (
     <span
       className={cn(
-        'border-line bg-surface-3 text-ink-2 inline-flex h-7 items-center gap-1.5 rounded-full border px-2.5 text-xs font-medium',
+        'border-line bg-surface-3 text-ink-2 text-meta inline-flex h-7 items-center gap-1.5 rounded-full border px-2.5 font-medium',
         className,
       )}
     >
