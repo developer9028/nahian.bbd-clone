@@ -130,6 +130,41 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
+.cover {
+  isolation: isolate;
+  background: linear-gradient(120deg, var(--cover-base-1), var(--cover-base-2));
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-blob {
+  aspect-ratio: 1;
+  background: radial-gradient(closest-side, var(--blob), transparent);
+  opacity: 0.85;
+  will-change: transform;
+  width: 70%;
+  animation: cover-drift var(--dur, 22s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+  border-radius: 9999px;
+  position: absolute;
+}
+
+.dark .cover-blob {
+  opacity: 0.7;
+}
+
+@keyframes cover-drift {
+  0% {
+    transform: translate(0) scale(1) rotate(0);
+  }
+  50% {
+    transform: translate(12%, -10%) scale(1.15) rotate(20deg);
+  }
+  to {
+    transform: translate(-10%, 8%) scale(0.95) rotate(-15deg);
+  }
+}
+
 .glass {
   background: color-mix(in srgb, var(--surface-2) 72%, transparent);
   backdrop-filter: blur(20px) saturate(1.6);
