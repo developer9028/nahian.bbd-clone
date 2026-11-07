@@ -6,7 +6,7 @@ import { SkillsSection } from '@/views/home/sections/SkillsSection'
 
 export const HomeView = () => {
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 sm:px-6">
+    <div className="flex w-full flex-col gap-10 px-4 py-10 sm:px-6">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

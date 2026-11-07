@@ -13,7 +13,7 @@ const Error = ({ error, reset }: ErrorProps) => {
   }, [error])
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-20 text-center sm:px-6">
+    <div className="flex w-full flex-col items-center gap-4 px-4 py-20 text-center sm:px-6">
       <h2 className="text-ink text-2xl font-bold tracking-tight">Could not load People</h2>
       <p className="text-ink-2 max-w-md text-sm">Please try again.</p>
       <button

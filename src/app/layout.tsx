@@ -47,7 +47,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${jetBrainsMono.variable}`}>
       <body>
-        <div className="mx-auto flex min-h-dvh max-w-[1400px]">
+        <div className="flex min-h-dvh w-full">
           <Sidebar />
           <main className="border-line min-w-0 flex-1 pb-24 md:border-x md:pb-0">{children}</main>
           <RightRail />
