@@ -1,0 +1,8 @@
+.next/
+node_modules/
+public/
+dist/
+build/
+*.min.js
+pnpm-lock.yaml
+package-lock.json
