@@ -21,31 +21,37 @@ export const PeopleView = ({ platform }: PeopleViewProps) => {
       : PEOPLE.filter((person) => person.links.some((link) => link.platform === active))
 
   return (
-    <div className="flex w-full flex-col gap-8 px-4 py-10 sm:px-6">
-      <div className="flex flex-col gap-3">
-        <p className="text-ink-3 text-meta font-semibold tracking-widest uppercase">
-          {PEOPLE.length} people · {VALID_FILTERS.length + 1} platforms
-        </p>
-        <h1 className="text-ink truncate text-lg font-semibold tracking-tight">People</h1>
-        <p className="text-ink-2 text-lead max-w-2xl">
-          People I learn from — builders, founders and teachers whose work keeps me sharp. Filter by
-          where I follow them, and follow them too.
-        </p>
+    <div className="flex w-full flex-col">
+      <div className="border-line bg-surface/85 sticky top-14 z-20 flex h-15 items-center justify-between gap-4 border-b px-4 backdrop-blur-md sm:px-6 md:top-0 md:h-17.5 lg:px-8">
+        <div className="flex min-w-0 items-center gap-3">
+          <h1 className="text-ink truncate text-lg font-semibold tracking-tight">People</h1>
+        </div>
       </div>
+      <div className="flex flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-3">
+          <p className="text-ink-3 text-meta font-semibold tracking-widest uppercase">
+            {PEOPLE.length} people · {VALID_FILTERS.length + 1} platforms
+          </p>
+          <p className="text-ink-2 text-lead max-w-2xl">
+            People I learn from — builders, founders and teachers whose work keeps me sharp. Filter
+            by where I follow them, and follow them too.
+          </p>
+        </div>
 
-      <FilterBar active={active} />
+        <FilterBar active={active} />
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {filtered.map((person) => (
-          <PersonCard key={person.id} person={person} />
-        ))}
+        <div className="grid gap-4 md:grid-cols-2">
+          {filtered.map((person) => (
+            <PersonCard key={person.id} person={person} />
+          ))}
+        </div>
+
+        {filtered.length === 0 ? (
+          <p className="border-line bg-surface-2 text-ink-3 text-body rounded-2xl border p-6 text-center">
+            No people found for this filter yet.
+          </p>
+        ) : null}
       </div>
-
-      {filtered.length === 0 ? (
-        <p className="border-line bg-surface-2 text-ink-3 text-body rounded-2xl border p-6 text-center">
-          No people found for this filter yet.
-        </p>
-      ) : null}
     </div>
   )
 }
