@@ -13,7 +13,7 @@ export const ContactView = () => {
           <h1 className="text-ink truncate text-lg font-semibold tracking-tight">Contact</h1>
         </div>
       </div>
-      <div className="flex flex-col gap-10 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="flex flex-col gap-10 px-4 pb-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">
             {PROFILE.openTo} · {PROFILE.location}

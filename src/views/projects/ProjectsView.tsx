@@ -10,7 +10,7 @@ export const ProjectsView = () => {
           <h1 className="text-ink truncate text-lg font-semibold tracking-tight">Projects</h1>
         </div>
       </div>
-      <div className="flex flex-col gap-10 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="flex flex-col gap-10 px-4 pb-8 sm:px-6 lg:px-8">
         <p className="text-ink-2 text-body max-w-xl">
           Products I’ve designed, built and shipped, plus the open source work behind them.
         </p>

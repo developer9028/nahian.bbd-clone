@@ -27,7 +27,7 @@ export const PeopleView = ({ platform }: PeopleViewProps) => {
           <h1 className="text-ink truncate text-lg font-semibold tracking-tight">People</h1>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="flex flex-col gap-8 px-4 pb-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-3">
           <p className="text-ink-3 text-meta font-semibold tracking-widest uppercase">
             {PEOPLE.length} people · {VALID_FILTERS.length + 1} platforms
