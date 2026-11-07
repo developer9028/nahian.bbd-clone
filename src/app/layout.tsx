@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Geist, JetBrains_Mono } from 'next/font/google'
 
+import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { RightRail } from '@/components/layout/RightRail'
 import { Sidebar } from '@/components/layout/Sidebar'
 
@@ -50,6 +51,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         <div className="flex min-h-dvh w-full">
           <Sidebar />
           <main className="border-line min-w-0 flex-1 pb-24 md:border-x md:pb-0">{children}</main>
+          <MobileBottomNav />
           <RightRail />
         </div>
       </body>
