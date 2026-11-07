@@ -26,7 +26,7 @@ export const PeopleView = ({ platform }: PeopleViewProps) => {
         <p className="text-ink-3 text-meta font-semibold tracking-widest uppercase">
           {PEOPLE.length} people · {VALID_FILTERS.length + 1} platforms
         </p>
-        <h1 className="text-ink text-title font-bold tracking-tight">People</h1>
+        <h1 className="text-ink truncate text-lg font-semibold tracking-tight">People</h1>
         <p className="text-ink-2 text-lead max-w-2xl">
           People I learn from — builders, founders and teachers whose work keeps me sharp. Filter by
           where I follow them, and follow them too.

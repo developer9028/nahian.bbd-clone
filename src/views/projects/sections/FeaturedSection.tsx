@@ -9,7 +9,7 @@ export const FeaturedSection = () => {
   return (
     <Card
       className={cn(
-        'via-surface-2 to-surface-2 border-emerald-500/20 bg-gradient-to-br from-emerald-950/60',
+        'bg-surface-2 ring-line overflow-hidden rounded-[1.75rem] p-1.5 ring-1 transition-[translate,box-shadow] hover:-translate-y-1',
       )}
     >
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
