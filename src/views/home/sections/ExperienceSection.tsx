@@ -3,8 +3,6 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils/cn'
 import { EXPERIENCE } from '@/lib/data/profile'
 
-import { Badge } from '@/components/ui/Badge'
-
 export const ExperienceSection = () => {
   const renderItem = (item: (typeof EXPERIENCE)[number], isLast: boolean) => (
     <li key={item.id} className={cn('relative flex gap-4 pb-6', isLast && 'pb-0')}>
@@ -54,10 +52,27 @@ export const ExperienceSection = () => {
         </p>
         <p className="text-body text-ink mt-2.5 leading-relaxed">{item.description}</p>
         {item.highlights ? (
-          <div className="mt-3.5 flex flex-wrap gap-1.5">
-            {item.highlights.map((highlight) => (
-              <Badge key={highlight}>{highlight}</Badge>
-            ))}
+          <div className="border-line mt-3.5 rounded-2xl border bg-[color-mix(in_srgb,var(--surface-2)_72%,transparent)] p-4 sm:p-5">
+            <dl className="grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-3">
+              <div className="sm:border-line col-span-2 flex flex-col-reverse justify-end gap-0.5 sm:col-span-1 sm:border-l sm:pl-5">
+                <dt className="text-meta text-ink-3">Raised</dt>
+                <dd className="text-title text-brand-400 font-bold whitespace-nowrap tabular-nums">
+                  $120K+
+                </dd>
+              </div>
+              <div className="sm:border-line flex flex-col-reverse justify-end gap-0.5 sm:border-l sm:pl-5">
+                <dt className="text-meta text-ink-3">Built by me from scratch</dt>
+                <dd className="text-lead text-ink font-bold whitespace-nowrap tabular-nums">
+                  Core + API
+                </dd>
+              </div>
+              <div className="sm:border-line flex flex-col-reverse justify-end gap-0.5 sm:border-l sm:pl-5">
+                <dt className="text-meta text-ink-3">Apps built on my API</dt>
+                <dd className="text-lead text-ink font-bold whitespace-nowrap tabular-nums">
+                  iOS + Android
+                </dd>
+              </div>
+            </dl>
           </div>
         ) : null}
       </div>
