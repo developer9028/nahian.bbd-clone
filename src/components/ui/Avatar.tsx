@@ -10,15 +10,15 @@ interface AvatarProps {
 }
 
 const SIZES = {
-  sm: 'h-10 w-10 text-xs',
-  md: 'h-12 w-12 text-sm',
-  lg: 'h-24 w-24 text-2xl',
+  sm: 'size-9 text-meta',
+  md: 'size-12 text-body',
+  lg: 'size-26 text-2xl',
 } as const
 
 const PIXELS = {
-  sm: 40,
-  md: 48,
-  lg: 96,
+  sm: 72,
+  md: 96,
+  lg: 240,
 } as const
 
 export const Avatar = ({ name, imageUrl, size = 'md', className }: AvatarProps) => {
@@ -39,8 +39,8 @@ export const Avatar = ({ name, imageUrl, size = 'md', className }: AvatarProps) 
         alt={name}
         width={PIXELS[size]}
         height={PIXELS[size]}
-        className={cn('h-full w-full object-cover', className)}
-        sizes="96px"
+        className="h-full w-full object-cover"
+        sizes={size === 'lg' ? '117px' : '48px'}
       />
     )
   }

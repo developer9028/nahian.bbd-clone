@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { cn } from '@/lib/utils/cn'
 import { CURRENT_ROLES, PROFILE, SKILLS_AND_TOOLS } from '@/lib/data/profile'
 
@@ -130,38 +132,50 @@ export const HeroSection = () => {
           <li className="inline-flex items-center gap-1.5">⌖ {PROFILE.location} · 8:03 AM</li>
         </ul>
 
-        <div className="mt-6 flex max-w-2xl flex-wrap justify-center gap-1.5" aria-label="AI tools">
-          {SKILLS_AND_TOOLS.slice(0, 4).map((tool) => (
-            <span
-              key={tool}
-              className="border-line bg-surface-2 text-meta text-ink-2 ring-line inline-flex items-center gap-1 rounded-md px-2 py-0.5 ring-1"
-            >
-              {tool}
-            </span>
-          ))}
-          {STACK_PILLS.slice(0, 8).map((tool) => (
-            <span
-              key={tool}
-              className="border-line bg-surface-2 text-meta text-ink-2 ring-line inline-flex items-center gap-1 rounded-md px-2 py-0.5 ring-1"
-            >
-              {tool}
-            </span>
-          ))}
+        <div className="mt-6 max-w-2xl space-y-2">
+          <ul className="flex flex-wrap justify-center gap-1.5" aria-label="AI tools">
+            {SKILLS_AND_TOOLS.slice(0, 4).map((tool) => (
+              <li key={tool}>
+                <span className="text-meta text-ink inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface)] px-2.5 py-0.5 font-medium shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                  <span className="size-3.5 shrink-0 rounded-full bg-current" aria-hidden="true" />
+                  {tool}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex flex-wrap justify-center gap-1.5" aria-label="Tech stack">
+            {STACK_PILLS.map((tool) => (
+              <li key={tool}>
+                <span className="text-meta text-ink inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-[var(--surface-3)] to-[var(--surface)] px-2.5 py-0.5 font-medium shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                  <span className="size-3.5 shrink-0 rounded-full bg-current" aria-hidden="true" />
+                  {tool}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <nav
-          aria-label="Profile"
-          className="border-line mt-6 flex w-full items-center justify-between border-t pt-4 pb-4"
-        >
-          <Button href={PROFILE.contactUrl} size="sm">
-            Get in touch
-          </Button>
-          <div className="flex items-center gap-6">
-            <span className="border-brand-500 text-brand-400 text-meta border-b-2 pb-1 font-bold tracking-widest">
-              RESUME
-            </span>
-            <span className="text-ink-3 text-meta pb-1 font-bold tracking-widest">WORK</span>
-          </div>
+        <nav aria-label="Profile" className="border-line mt-10 border-b px-4 sm:px-6 lg:px-8">
+          <ul className="flex justify-center gap-8">
+            <li>
+              <Link
+                href="/"
+                aria-current="page"
+                className="text-meta text-brand-400 relative block py-3 font-semibold tracking-wide uppercase"
+              >
+                Resume
+                <span className="bg-link absolute inset-x-0 -bottom-px h-0.5 rounded-full" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/projects"
+                className="text-meta text-ink hover:text-ink-2 relative block py-3 font-semibold tracking-wide uppercase"
+              >
+                Work
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
