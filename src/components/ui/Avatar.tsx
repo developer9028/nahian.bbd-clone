@@ -40,13 +40,13 @@ export const Avatar = ({ name, imageUrl, size = 'md', className }: AvatarProps) 
         width={PIXELS[size]}
         height={PIXELS[size]}
         className={cn('h-full w-full object-cover', className)}
-        sizes="64px"
+        sizes="96px"
       />
     )
   }
 
   const renderFallback = () => (
-    <span className="flex h-full w-full items-center justify-center font-semibold text-stone-600">
+    <span className="text-ink-2 flex h-full w-full items-center justify-center font-semibold">
       {initials}
     </span>
   )
@@ -54,7 +54,7 @@ export const Avatar = ({ name, imageUrl, size = 'md', className }: AvatarProps) 
   return (
     <div
       className={cn(
-        'shrink-0 overflow-hidden rounded-full border border-stone-200 bg-stone-100',
+        'border-surface bg-surface-3 shrink-0 overflow-hidden rounded-full border-2',
         SIZES[size],
         className,
       )}

@@ -1,21 +1,19 @@
-import { Badge } from '@/components/ui/Badge'
-import { Card } from '@/components/ui/Card'
+import { FeaturedSection } from '@/views/projects/sections/FeaturedSection'
+import { OpenSourceSection } from '@/views/projects/sections/OpenSourceSection'
+import { ProductGridSection } from '@/views/projects/sections/ProductGridSection'
 
 export const ProjectsView = () => {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-16 sm:px-6">
+    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 sm:px-6">
       <div className="flex flex-col gap-3">
-        <Badge>Phase 1 placeholder</Badge>
-        <h1 className="text-4xl font-bold tracking-tight text-stone-900">Projects</h1>
-        <p className="text-base text-stone-600">
-          Products designed, built and shipped. Full grid lands in Phase 3.
+        <h1 className="text-ink text-4xl font-bold tracking-tight">Projects</h1>
+        <p className="text-ink-2 max-w-2xl text-base">
+          Products I’ve designed, built and shipped, plus the open source work behind them.
         </p>
       </div>
-      <Card>
-        <p className="text-sm text-stone-600">
-          Header and Footer render on this page — Phase 1 deliverable check.
-        </p>
-      </Card>
+      <FeaturedSection />
+      <ProductGridSection />
+      <OpenSourceSection />
     </div>
   )
 }

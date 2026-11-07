@@ -11,18 +11,18 @@ interface ButtonProps {
 }
 
 const BASE =
-  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2'
+  'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl font-semibold tracking-[-0.01em] whitespace-nowrap select-none transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]'
 
 const VARIANTS = {
-  primary: 'bg-stone-900 text-white hover:bg-stone-700',
-  secondary: 'border border-stone-200 bg-white text-stone-900 hover:bg-stone-50',
-  ghost: 'text-stone-700 hover:bg-stone-100',
+  primary: 'btn-primary text-white',
+  secondary: 'btn-secondary',
+  ghost: 'text-ink-2 hover:bg-surface-2 hover:text-ink',
 } as const
 
 const SIZES = {
-  sm: 'h-8 px-3 text-xs',
-  md: 'h-10 px-4 text-sm',
-  lg: 'h-11 px-5 text-sm',
+  sm: 'h-8 px-3.5 text-xs',
+  md: 'h-9 px-4 text-sm',
+  lg: 'h-10 px-5 text-sm',
 } as const
 
 export const Button = ({

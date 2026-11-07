@@ -9,8 +9,8 @@ export const ExperienceSection = () => {
     <Card key={item.id} className={cn('flex flex-col gap-3')}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex flex-col gap-1">
-          <h3 className="text-lg font-semibold text-stone-900">{item.role}</h3>
-          <p className="text-sm text-stone-600">
+          <h3 className="text-ink text-lg font-semibold">{item.role}</h3>
+          <p className="text-ink-2 text-sm">
             {item.companyUrl ? (
               <a
                 href={item.companyUrl}
@@ -23,12 +23,12 @@ export const ExperienceSection = () => {
             ) : (
               <span className="font-medium">{item.company}</span>
             )}
-            <span className="text-stone-400"> · {item.type}</span>
+            <span className="text-ink-3"> · {item.type}</span>
           </p>
         </div>
-        <Badge className="border-stone-200 bg-stone-50 text-stone-600">{item.period}</Badge>
+        <Badge className="border-line bg-surface-2 text-ink-2">{item.period}</Badge>
       </div>
-      <p className="max-w-3xl text-sm leading-relaxed text-stone-600">{item.description}</p>
+      <p className="text-ink-2 max-w-3xl text-sm leading-relaxed">{item.description}</p>
       {item.highlights ? (
         <div className="flex flex-wrap gap-1.5">
           {item.highlights.map((highlight) => (
@@ -41,7 +41,7 @@ export const ExperienceSection = () => {
 
   return (
     <section aria-labelledby="experience-heading" className="flex flex-col gap-4">
-      <h2 id="experience-heading" className="text-2xl font-bold tracking-tight text-stone-900">
+      <h2 id="experience-heading" className="text-ink text-2xl font-bold tracking-tight">
         Experience
       </h2>
       <div className="flex flex-col gap-4">{EXPERIENCE.map((item) => renderItem(item))}</div>

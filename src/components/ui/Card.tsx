@@ -11,7 +11,7 @@ export const Card = ({ children, className }: CardProps) => {
   const renderContent = () => children
 
   return (
-    <div className={cn('rounded-2xl border border-stone-200 bg-white p-5 sm:p-6', className)}>
+    <div className={cn('glass border-line bg-surface-2 rounded-2xl border p-5 sm:p-6', className)}>
       {renderContent()}
     </div>
   )
